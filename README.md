@@ -8,3 +8,4 @@ interaction layer to connect the user and control system.
   In the end, we hope that we can identify a dynamic balance between the heating circle system and users' behaviour based on hadoop 
 cluster computing platform.
   Let's wait and see!
+  volunteerbj@sina.com
