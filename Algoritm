@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char const *argv[])
+{
+	float data[argc - 1];
+	int readfloat;
+	for(readfloat = 1;readfloat < argc ;readfloat++){
+		data[readfloat - 1] = atof(argv[readfloat]);
+	}
+
+	float min = data[0];
+	float max = data[0];
+	int loop;
+	for(loop = 1;loop < argc -1;loop++){
+		if (min > data[loop])
+			min = data[loop];
+		if (max < data[loop])
+			max = data[loop];
+		printf("loop:%d,min:%04f,max:%04f\n",loop,min,max);
+	}
+
+	printf("The Max value:%04f\n",max);
+	printf("The Min value:%04f\n",min);
+
+	int input = argc;
+	int loop2;
+	for(loop2 = 0;loop2 < input;loop2++){
+		printf("No%d : %s\n",loop2,argv[loop2]);
+	}
+
+	return 0;
+}
