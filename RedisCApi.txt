@@ -1,0 +1,9 @@
+When you download the Hiredis source form gihub, make the source ,get library file, copy the libhiredis.so into /usr/local/lib/，
+hiredis.h into /usr/local/inlcude/hiredis/, finished a compiling command : gcc -o test redis-test.c -L/usr/local/lib -lhiredis.
+Everything, just fine. But when you run the executive file ,Opps from stderr you something like this :
+./test: error while loading shared libraries: libhiredis.so.0.13: cannot open shared object file: No such file or directory.
+Now the next lines will lead you how to deal with it:
+1.In /etc/ld.so.conf.d directory , open a file called hiredis.conf;
+2.Input the absolute path includes libhiredis.so.0.13, in my ubuntu distribution (/usr/local/lib);
+3.execute ldconfig ;
+Ok , complile again, work normally.
